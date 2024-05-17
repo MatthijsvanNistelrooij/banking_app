@@ -60,7 +60,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                       <Link
                         href={item.route}
                         key={item.label}
-                        className={cn("mobilenav-sheet_close w-full", {
+                        className={cn("mobilenav-sheet_close w-full hover:bg-slate-200", {
                           "bg-bank-gradient": isActive,
                         })}
                       >

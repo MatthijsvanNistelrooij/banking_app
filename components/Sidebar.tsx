@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation"
 import Footer from "./Footer"
 import PlaidLink from "./PlaidLink"
 
-
 const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname()
 
@@ -26,15 +25,15 @@ const Sidebar = ({ user }: SiderbarProps) => {
           <h1 className="sidebar-logo">Horizon</h1>
         </Link>
 
-        {sidebarLinks.map((item) => {
+        {sidebarLinks.map((item, idx) => {
           const isActive =
             pathname === item.route || pathname.startsWith(`${item.route}/`)
 
           return (
-            <>
-               <Link
+            <div key={idx}>
+              <Link
                 href={item.route}
-                key={item.label}
+                key={idx}
                 className={cn("sidebar-link", { "bg-bank-gradient": isActive })}
               >
                 <div className="relative size-6">
@@ -51,7 +50,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                   {item.label}
                 </p>
               </Link>
-            </>
+            </div>
           )
         })}
 
