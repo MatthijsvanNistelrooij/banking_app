@@ -2,11 +2,15 @@
 import { useState } from "react";
 
 import { Button } from "./ui/button";
+import { log } from "console";
 
 const Copy = ({ title }: { title: string }) => {
   const [hasCopied, setHasCopied] = useState(false);
+  console.log( "Clicked")
 
   const copyToClipboard = () => {
+    console.log( "Clicked")
+
     navigator.clipboard.writeText(title);
     setHasCopied(true);
 

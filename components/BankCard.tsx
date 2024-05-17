@@ -16,7 +16,7 @@ const BankCard = ({
         className="bank-card"
       >
         <div className="bank-card_content">
-          <div>
+          <div key={account.appwriteItemId}>
             <h1 className="text-16 font-semibold text-white">
               {account.name || userName}
             </h1>
